@@ -33,15 +33,15 @@ class Solution:
         
         #
         out = {'loss': float(np.round(L,4)),
-        'dW1': np.round(dW1,4),
+        'dW1': np.round(dW1,4).tolist(),
         # Return dict with keys:
         #   'loss':  float (MSE loss, rounded to 4 decimals)
         #   'dW1':   2D list (gradient w.r.t. W1, rounded to 4 decimals)
-        'db1': np.round(db1,4),
+        'db1': np.round(db1,4).tolist(),
         #   'db1':   1D list (gradient w.r.t. b1, rounded to 4 decimals)
-        'dW2' : np.round(dW2,4),
+        'dW2' : np.round(dW2,4).tolist(),
         #   'dW2':   2D list (gradient w.r.t. W2, rounded to 4 decimals)
-        'db2' : np.round(db2,4)
+        'db2' : np.round(db2,4).tolist()
         #   'db2':   1D list (gradient w.r.t. b2, rounded to 4 decimals)
         }
         return out

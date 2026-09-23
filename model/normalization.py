@@ -9,13 +9,11 @@ class Solution:
         # gamma: 1D scale parameter (same length as x)
         # beta: 1D shift parameter (same length as x)
         # eps = 1e-5 
-        eps = 1e-5 #just to avoid var = 0 situations
-        variance = np.var(x)
-        mean = np.mean(x)
+        
 
         # Normalize: x_hat = (x - mean) / sqrt(var + eps)
         # Scale and shift: out = gamma * x_hat + beta
         # return np.round(your_answer, 5)
-        x_hat = (x-mean)/ np.sqrt(variance+eps)
-        out = gamma * x_hat + beta
-        return np.round(out,5)
+        x_hat =  gamma *((x-np.mean(x))/ np.sqrt(np.var(x)+1e-5)) + beta
+        
+        return np.round(x_hat,5)

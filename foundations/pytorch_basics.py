@@ -6,7 +6,7 @@ from torchtyping import TensorType
 class Solution:
     def reshape(self, to_reshape: TensorType[float]) -> TensorType[float]:
         # Reshape (M, N) tensor to (M*N/2, 2)
-        x = torch.tensor(to_reshape)
+        x = to_reshape.detach().clone()
         M,N = x.shape
         new_dim = M*N//2
         return torch.reshape(x,[new_dim,2])

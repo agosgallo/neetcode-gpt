@@ -7,7 +7,7 @@ class Solution:
     def reshape(self, to_reshape: TensorType[float]) -> TensorType[float]:
         # Reshape (M, N) tensor to (M*N/2, 2)
         M = len(to_reshape)
-        N = len(to_reshape[1])
+        N = len(to_reshape[0])
         return torch.reshape(to_reshape,[(M*N)//2,2])
         # Use torch.reshape(tensor, new_shape)
 
